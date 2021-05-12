@@ -68,10 +68,10 @@ class JunitMockitoTestApplicationTests {
     
     Mockito.verify(cuentaRepository, times(3)).findById(1L);
     Mockito.verify(cuentaRepository, times(3)).findById(2L);
-    Mockito.verify(cuentaRepository, times(2)).update(Mockito.any(Cuenta.class));
+    Mockito.verify(cuentaRepository, times(2)).save(Mockito.any(Cuenta.class));
     
     Mockito.verify(bancoRepository, times(2)).findById(1L);
-    Mockito.verify(bancoRepository).update(Mockito.any(Banco.class));
+    Mockito.verify(bancoRepository).save(Mockito.any(Banco.class));
     
     Mockito.verify(cuentaRepository, times(6)).findById(Mockito.anyLong());
     Mockito.verify(cuentaRepository, never()).findAll();
@@ -106,10 +106,10 @@ class JunitMockitoTestApplicationTests {
     
     Mockito.verify(cuentaRepository, times(3)).findById(1L);
     Mockito.verify(cuentaRepository, times(2)).findById(2L);
-    Mockito.verify(cuentaRepository, never()).update(Mockito.any(Cuenta.class));
+    Mockito.verify(cuentaRepository, never()).save(Mockito.any(Cuenta.class));
     
     Mockito.verify(bancoRepository, times(1)).findById(1L);
-    Mockito.verify(bancoRepository, never()).update(Mockito.any(Banco.class));
+    Mockito.verify(bancoRepository, never()).save(Mockito.any(Banco.class));
     Mockito.verify(cuentaRepository, times(5)).findById(Mockito.anyLong());
     Mockito.verify(cuentaRepository, never()).findAll();
   }
