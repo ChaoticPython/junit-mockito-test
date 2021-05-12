@@ -1,23 +1,35 @@
 package org.test.app.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "bancos")
 public class Banco {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   
+  @Column(name = "nombre_banco")
   private String nombreBanco;
   
-  private int totaltransferencias;
+  @Column(name = "total_transferencias")
+  private int totalTransferencias;
 
   public Banco() {
-    super();
-    // TODO Auto-generated constructor stub
+    
   }
 
   public Banco(Long id, String nombreBanco, int totaltransferencias) {
     super();
     this.id = id;
     this.nombreBanco = nombreBanco;
-    this.totaltransferencias = totaltransferencias;
+    this.totalTransferencias = totaltransferencias;
   }
 
   public Long getId() {
@@ -37,11 +49,11 @@ public class Banco {
   }
 
   public int getTotaltransferencias() {
-    return totaltransferencias;
+    return totalTransferencias;
   }
 
   public void setTotaltransferencias(int totaltransferencias) {
-    this.totaltransferencias = totaltransferencias;
+    this.totalTransferencias = totaltransferencias;
   }
   
 }
