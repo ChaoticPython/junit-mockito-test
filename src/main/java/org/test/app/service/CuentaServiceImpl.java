@@ -1,5 +1,6 @@
 package org.test.app.service;
 
+import org.springframework.stereotype.Service;
 import org.test.app.model.Banco;
 import org.test.app.model.Cuenta;
 import org.test.app.repository.IBancoRepository;
@@ -7,6 +8,7 @@ import org.test.app.repository.ICuentaRepository;
 
 import java.math.BigDecimal;
 
+@Service
 public class CuentaServiceImpl implements ICuentaService {
 
   private ICuentaRepository cuentaRepository;
