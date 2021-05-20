@@ -3,6 +3,7 @@ package org.test.app.service;
 import org.test.app.model.Cuenta;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public interface ICuentaService {
 
@@ -13,5 +14,9 @@ public interface ICuentaService {
   BigDecimal revisarSaldo(Long cuentaId);
   
   void transferir(Long numeroCuentaOrigen, Long numeroCuentaDestino, BigDecimal monto, Long bancoId);
+  
+  List<Cuenta> findAll();
+  
+  Cuenta save(Cuenta cuenta);
   
 }

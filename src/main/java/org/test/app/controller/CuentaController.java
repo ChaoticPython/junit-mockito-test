@@ -16,6 +16,7 @@ import org.test.app.service.ICuentaService;
 
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -45,6 +46,18 @@ public class CuentaController {
     response.put("detalles", transaccion);
     
     return ResponseEntity.ok(response);
+  }
+  
+  @GetMapping
+  @ResponseStatus(HttpStatus.OK)
+  public List<Cuenta> listar() {
+    return cuentaService.findAll();
+  }
+  
+  @PostMapping
+  @ResponseStatus(HttpStatus.CREATED)
+  public Cuenta guardar(@RequestBody Cuenta cuenta) {
+    return cuentaService.save(cuenta);
   }
   
 }

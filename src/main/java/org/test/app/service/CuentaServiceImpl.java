@@ -7,6 +7,7 @@ import org.test.app.repository.IBancoRepository;
 import org.test.app.repository.ICuentaRepository;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 public class CuentaServiceImpl implements ICuentaService {
@@ -52,6 +53,16 @@ public class CuentaServiceImpl implements ICuentaService {
     int totalTransferencias = banco.getTotaltransferencias();
     banco.setTotaltransferencias(++totalTransferencias);
     bancoRepository.save(banco);
+  }
+
+  @Override
+  public List<Cuenta> findAll() {
+    return cuentaRepository.findAll();
+  }
+
+  @Override
+  public Cuenta save(Cuenta cuenta) {
+    return cuentaRepository.save(cuenta);
   }
 
 }
